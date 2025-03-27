@@ -132,4 +132,13 @@ There are many ways to represent colors in computer.
 
 4. background-color, color and border which is a shorthand property for border-top, border-bottom,border-left, border-right.
 
+------------------------------------------------------
+PSEUDO-CLASSES
+------------------------------------------------------
+1. For example lets assume we want to style only the first element of the list. We can select that by usiing pseudo classes - li:first-child{}
+
+2. li:last-child{} for last child
+3. li:nth-child(odd,even,2,3etc.){} for nth child
+
+
 */
