@@ -74,6 +74,12 @@ aside {
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
 }
+
+/* Styling Links */
+a {
+  color: #1098ad;
+}
+
 /* 
 ------------------------------------------------------
 STYLING TEXT
@@ -138,7 +144,22 @@ PSEUDO-CLASSES
 1. For example lets assume we want to style only the first element of the list. We can select that by usiing pseudo classes - li:first-child{}
 
 2. li:last-child{} for last child
+
 3. li:nth-child(odd,even,2,3etc.){} for nth child
 
+------------------------------------------------------
+STYLING HYPERLINKS
+------------------------------------------------------
+1. we should document our code using comments
 
+2. styling links directly is a bad practice.
+
+3. Instead style hyperlinks with pseudo classes
+  a. a:link{} for anchor elements that have href attribute
+  b. a:visited{} for links that have been clicked before. In practice we never do this
+  c. we keep both of these together
+  d. a:hover{} for links when we hover them
+  e. a:active{} for links when we have clicked them 
+
+4. Another common thing is to remove underline by text-decoration to none. This is also a shorthand property 
 */
