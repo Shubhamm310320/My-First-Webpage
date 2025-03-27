@@ -226,3 +226,54 @@ p {
   font-size: "18px";
 }
 ```
+
+### The 3 ways to apply CSS
+
+1. **Inline CSS** - applies styles directly within an HTML element
+
+   ```html
+   <p style="color: blue; font-size: 20px;">This is a blue paragraph.</p>
+   ```
+
+2. **Internal CSS** - defined within a `<style>` tag inside the `<head>` section of the HTML document
+
+   ```html
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <style>
+         p {
+           color: green;
+           font-size: 18px;
+         }
+       </style>
+     </head>
+     <body>
+       <p>This is a green paragraph.</p>
+     </body>
+   </html>
+   ```
+
+3. **External CSS** - written in an external `.css` file which is linked using the `<link>` tag in the `<head>` section of the HTML document.
+
+   ```html
+   <!-- Linking the external file -->
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <link rel="stylesheet" href="styles.css" />
+     </head>
+     <body>
+       <p>This paragraph is styled with an external CSS file.</p>
+     </body>
+   </html>
+   ```
+
+   ```css
+   /* External CSS file  */
+   p {
+     color: red;
+     font-size: 16px;
+     font-weight: bold;
+   }
+   ```
