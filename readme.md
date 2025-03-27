@@ -277,3 +277,17 @@ p {
      font-weight: bold;
    }
    ```
+
+### Common CSS Properties
+
+```css
+/* Text Properties */
+p {
+  font-size: 10px;
+  font-family: sans-serif;
+  font-style: italic;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+}
+```
