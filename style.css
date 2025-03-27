@@ -4,6 +4,13 @@ h3,
 p,
 li {
   font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
 }
 
 h1 {
@@ -35,11 +42,38 @@ p {
 li {
   font-size: 20px;
 }
-
+/* 
 footer p {
+  font-size: 16px;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
   font-size: 16px;
 }
 
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
 /* 
 ------------------------------------------------------
 STYLING TEXT
@@ -51,6 +85,7 @@ STYLING TEXT
 3. The elements that were inside of the paragraphs also got the same styles. This is because of a mechanism called inheritance 
 
 4. text-align centers the element inside its parent element
+
 ------------------------------------------------------
 COMBINING SELECTORS
 ------------------------------------------------------
@@ -62,5 +97,39 @@ COMBINING SELECTORS
 
 4. These are not very robust solutions as if the code changes in future there might be lots of bugs arising.
 
+------------------------------------------------------
+CLASS and ID SELECTORS
+------------------------------------------------------
+1. # is the ID selector 
+
+2. Ctrl + / is for comments
+
+3. . is the class selector
+
+4. big difference between both is that id is non repeatable but classes can be used at multiple elements
+
+5. There is a convention that if we have multiple word class names we write it using - or _
+
+6. new property font-weight.
+
+7. our paragraphs are selected 3 times and all the styles are applied.
+
+8. removing bullet points by list-style property
+
+9. In the real world we always use classes and not id's
+
+------------------------------------------------------
+WORKING WITH COLORS
+------------------------------------------------------
+There are many ways to represent colors in computer.
+1. The traditional model is the RGB model, where colors can be represented by a combination of red,blue,green. each of 3 base colors can take a value from 0 to 255, which leads to 16.8 million different colors.
+
+2. In CSS we have two ways to define colors using rgb model
+  a. rgb/rgba notation  rgba(0, 0 , 0, 0.3)
+  b. hexadecimal notation #fff
+
+3. If the three pairs are similar it is indication of a grey color.
+
+4. background-color, color and border which is a shorthand property for border-top, border-bottom,border-left, border-right.
 
 */
