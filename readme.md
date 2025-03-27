@@ -30,17 +30,19 @@
 
    - **Frontend Technologies:**
 
-     - **HTML** – Defines the structure (headings, paragraphs, buttons).
-     - **CSS** – Styles the website (colors, fonts, layout).
-     - **JavaScript** – Adds interactivity (buttons, animations, pop-ups).
+     - **HTML** – Defines the **structure** (headings, paragraphs, buttons).
+     - **CSS** – **Styles** the website (colors, fonts, layout).
+     - **JavaScript** – Adds **interactivity** (buttons, animations, pop-ups).
 
    - **Backend Technologies:**
 
-     - \*\* \*\* Python, JavaScript (Node.js), PHP, Java, Ruby, etc.
+     - `Python`, `JavaScript` (`Node.js`), `PHP`, `Java`, `Ruby`, etc.
 
-     - \*\* \*\* MySQL, PostgreSQL, MongoDB (store and manage data).
+     - `MySQL`, `PostgreSQL`, `MongoDB` (store and manage data).
 
-     - \*\* \*\* Apache, Nginx, cloud platforms like AWS.
+     - `Apache`, `Nginx`, cloud platforms like `AWS`.
+
+---
 
 ## Fundamentals of HTML
 
@@ -194,3 +196,33 @@ Types of Tags are
 ```
 
 Semantic HTML was introduced after HTML5, before which everything was contained in `<div>`**Everything**`</div>` to make up the layout of webpages. Developers used multiple `<div>` elements with classes and IDs to style and organize content, making the code harder to read and maintain. With the introduction of semantic elements, web pages became more structured, improving accessibility, readability, and SEO ranking.
+
+This change makes the code more meaningful and improves its interpretation by browsers, search engines, and assistive technologies.
+
+---
+
+## Fundamentals of CSS
+
+- **C**ascading **S**tyle **S**heets
+
+- CSS describes the **visual style and presentation** of the **content written in HTML**
+
+- CSS consists of countless **properties** that developers use to format the content: properties about font, text, spacing, layout etc.
+
+### **CSS Syntax**
+
+```css
+selector {
+  property: value;
+}
+
+/* 
+the brackets are the declaration box inside which the property and the value are defined
+*/
+
+/* example */
+
+p {
+  font-size: "18px";
+}
+```
