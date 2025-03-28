@@ -24,6 +24,23 @@ body {
   margin-bottom: 60px;
 }
 
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
 .post-header {
   margin-bottom: 40px;
 }
@@ -63,6 +80,11 @@ h1 {
   font-size: 26px;
   text-transform: uppercase;
   font-style: italic;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
 }
 
 h2 {
@@ -289,4 +311,15 @@ Absolute positioning
 Created a like button for example
 default the position would be relative to the viewport but if we set some element position to relative then it will be relative to that.
 it needs to be somewhere inside the element that we make relative not a sibling or outside.
+
+------------------------------------------------------
+Pseudo Elements
+------------------------------------------------------
+The elements which are not HTML elements but even then we can select and style them in CSS using pseudo elements. for example the first letter of a para or text, or the first line of a para or text.
+
+used by ::
+
+Adjacent sibling selector(+) - h3 + p means only the paras after an h3 that means a adjacent element after the h3 in the same parent element that means sibling. hence adjacent sibling.
+
+The most useful are ::after and ::before used to create a pseudo element that will automatically be the very first child of the selected element and for small cosmetic styles.
 */
