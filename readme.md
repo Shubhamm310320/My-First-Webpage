@@ -467,5 +467,17 @@ div {
   text-decoration-color: #1098ad;
   text-decoration-style: dotted;
   text-decoration: dashed underline #1098ad; /* text-decoration will define all */
+
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 10px; /* padding will define all */
+
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: 10px; /* margin will define all */
 }
 ```

@@ -1,10 +1,54 @@
-h1,
-h2,
-h3,
-p,
-li {
-  font-family: sans-serif;
+* {
+  /* inheritance and global reset */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* inheritance and global properties */
   color: #444;
+  font-family: sans-serif;
+
+  border-top: 10px solid #1098ad;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+}
+
+nav {
+  /* inheritance */
+  font-size: 18px;
 }
 
 h1,
@@ -21,27 +65,42 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
   font-size: 20px;
-
   text-transform: uppercase;
   text-align: center;
 }
+
 p {
   font-size: 22px;
-
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
 }
+
+li:last-child {
+  margin-bottom: 0;
+}
+
 /* 
 footer p {
   font-size: 16px;
@@ -65,24 +124,17 @@ footer p {
   list-style: none;
 }
 
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
-
 /* Styling Links */
-a {
+a:link,
+a:visited {
   color: #1098ad;
 }
 
-div {
+a:hover,
+a:active {
+  color: red;
+  background-color: #444;
 }
-
 /* 
 ------------------------------------------------------
 STYLING TEXT
@@ -164,5 +216,46 @@ STYLING HYPERLINKS
   d. a:hover{} for links when we hover them
   e. a:active{} for links when we have clicked them 
 
-4. Another common thing is to remove underline by text-decoration to none. This is also a shorthand property 
+4. Another common thing is to remove underline by text-decoration to none. This is also a shorthand property
+
+------------------------------------------------------
+CSS box model
+------------------------------------------------------
+1. It defines how elements are displayed and sized on a webpage.
+2. Each element can be seen as a rectangular box with a content, border and space inside and outside.
+3. height and width - content
+4. border - inside
+5. padding - inside - between content and border
+6. margin - outside - space between elements on our page - margins are overlapping that means the margin that is greater will apply and not added. we should use and stick to margin bottom for spacing between elements.
+7. these are optional properties
+8. by default the final width and height are calculated by keeping padding and borders into account.
+
+------------------------------------------------------
+Types of Boxes in Box Model
+------------------------------------------------------
+
+There are 3 types - inline and block level boxes
+1. Block level elements
+    a. Elements are formatted visually as blocks 
+    b. occupy 100% of parent element's width
+    c. stacked vertically by default 
+    d. Follow normal box-model behaviour 
+
+    default elements: body, main, header, footer, section, nav, aside, div, h1-h6, p, ul, ol, li, etc.
+    with CSS: display: block - inline to block
+
+2. Inline Elements
+    a. Cause no line-break before or after the element 
+    b. occupy only the space necessary for its content
+    c. paddings and margins apply only horizontally (left and right) 
+    d. heights and widths do not apply 
+
+    default elements: a, img, strong, em, button, etc.
+    with CSS: display: inline - block to inline
+
+3. Inline-Block elements
+    a. Cause no line-break before or after the element 
+    b. occupy only the space necessary for its content
+    c. Follow normal box-model behaviour
+    d. images are inline-block elements
 */
