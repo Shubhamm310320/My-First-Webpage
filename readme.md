@@ -215,15 +215,22 @@ This change makes the code more meaningful and improves its interpretation by br
 selector {
   property: value;
 }
+```
 
-/* 
-the brackets are the declaration box inside which the property and the value are defined
-*/
+- **Selector:** Specifies the HTML element(s) to style.
 
-/* example */
+- **Declaration:** A property-value pair inside curly brackets.
 
+- **Property:** Defines what aspect of the element to style (e.g., color, font-size).
+
+- **Value:** Specifies how the property should be applied (e.g., red, 20px).
+
+`Example:`
+
+```css
 p {
-  font-size: "18px";
+  font-size: 18px;
+  color: blue;
 }
 ```
 
@@ -231,9 +238,9 @@ p {
 
 1. **Inline CSS** - applies styles directly within an HTML element
 
-   ```html
-   <p style="color: blue; font-size: 20px;">This is a blue paragraph.</p>
-   ```
+```html
+<p style="color: blue; font-size: 20px;">This is a blue paragraph.</p>
+```
 
 2. **Internal CSS** - defined within a `<style>` tag inside the `<head>` section of the HTML document
 
@@ -278,16 +285,187 @@ p {
    }
    ```
 
+### CSS Selectors
+
+Let us get to know about how to choose elements from the document to style by using various types of CSS selectors, in an incrementing order of their specificities/priority.
+
+- **Universal Selector (\*)**
+
+  Selects all elements in the document and inherits all properties, even those which do not get inherited, to every element of the document.
+
+  Least specificity.
+
+  ```css
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ```
+
+- **Type/Element Selector**
+
+  Selects all elements of a specific type (tag name).
+
+  ```css
+  h1 {
+    color: blue;
+  }
+  ```
+
+- **Class Selector (.)**
+
+  Selects elements with a specific class name.
+
+  Classes can be applied to multiple elements and are commonly used in real-world applications for reusable styles.
+
+  ```css
+  .intro {
+    font-size: 20px;
+    color: green;
+  }
+  ```
+
+  _Usage in HTML:_
+
+  ```html
+  <p class="intro">This is an introduction paragraph.</p>
+  ```
+
+- **ID Selector (#)**
+
+  Selects a unique element by its ID.
+
+  IDs should be unique within a document and are more specific than class selectors.
+
+  ```css
+  #main-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  ```
+
+  _Usage in HTML:_
+
+  ```html
+  <h1 id="main-title">Welcome to CSS</h1>
+  ```
+
+- **Descendant Selector**
+
+  Selects elements that are inside a specific parent element.
+
+  ```css
+  div p {
+    color: purple;
+  }
+  ```
+
+  _Usage in HTML:_
+
+  ```html
+  <div>
+    <p>This paragraph inside a div will be purple.</p>
+  </div>
+  ```
+
+- **Pseudo-classes**
+
+  Pseudo-classes define a special state of an element.
+
+  ```css
+  /* Style first child of a parent element*/
+  p:first-child {
+    font-weight: bold;
+  }
+
+  /* Style last child of a parent element*/
+  p:last-child {
+    font-style: italic;
+  }
+
+  /* Style nth child of a parent element*/
+  li:nth-child(2) {
+    color: orange;
+  }
+
+  /*---------------------------------------------------------------
+    Pseudo classes are most commonly used to style hyperlinks in the same order as given below and it is good practice to keep the link & visited together and the hover and active together. But we can use them anyhow we like. 
+   ---------------------------------------------------------------*/
+
+  /* Style unvisited links */
+  a:link {
+    color: blue;
+  }
+
+  /* Change color when hovered */
+  a:hover {
+    color: red;
+  }
+
+  /* Style visited links */
+  a:visited {
+    color: purple;
+  }
+
+  /* Style when an element is active */
+  button:active {
+    background-color: yellow;
+  }
+  ```
+
+- **!important Keyword Hack**
+
+  - The !important rule is used to override all other declarations, regardless of specificity.
+
+  - It should be used sparingly as it can make debugging styles difficult.
+
+  ```css
+  /* Important keyword in CSS has the highest priority */
+  p {
+    font-size: 18px !important;
+  }
+  ```
+
 ### Common CSS Properties
 
 ```css
-/* Text Properties */
+/* Text Properties:
+Text properties are the ones that can get inherited automatically
+*/
+
 p {
   font-size: 10px;
   font-family: sans-serif;
   font-style: italic;
+  font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.5;
+}
+
+/* Color Properties:
+Colors have 2 common notations in CSS that are rgb/rgba or the hexdecimal notation. In rgba, a is the alpha value used to define transperency
+*/
+
+div {
+  color: #fff;
+  background-color: rgb(0, 0, 0);
+}
+
+/* shorthand properties:
+One property can be used to define the value of multiple properties
+*/
+
+div {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border: 5px solid #000; /* border will define all*/
+
+  text-decoration-line: underline;
+  text-decoration-color: #1098ad;
+  text-decoration-style: dotted;
+  text-decoration: dashed underline #1098ad; /* text-decoration will define all */
 }
 ```
