@@ -234,7 +234,7 @@ p {
 }
 ```
 
-### The 3 ways to apply CSS
+### **The 3 ways to apply CSS**
 
 1. **Inline CSS** - applies styles directly within an HTML element
 
@@ -285,7 +285,7 @@ p {
    }
    ```
 
-### CSS Selectors
+### **CSS Selectors**
 
 Let us get to know about how to choose elements from the document to style by using various types of CSS selectors, in an incrementing order of their specificities/priority.
 
@@ -368,6 +368,23 @@ Let us get to know about how to choose elements from the document to style by us
   </div>
   ```
 
+- **Adjacent Selector**
+
+  This selects the adjacent sibling elements and is denoted by a `+` sign.
+
+  siblings are the elements present inside of a same parent element.
+
+  ```css
+  /* Select all paragraphs which come just after an h2 element */
+  h2 + p {
+    color: red;
+  }
+
+  h2 + p::first-letter {
+    font-size: 40px;
+  }
+  ```
+
 - **Pseudo-classes**
 
   Pseudo-classes define a special state of an element.
@@ -413,7 +430,50 @@ Let us get to know about how to choose elements from the document to style by us
   }
   ```
 
-- **!important Keyword Hack**
+- **Pseudo Elements**
+
+  Pseudo elements can select elements that are not actual HTML elements such as first-letter or first-line of a paragraph or text
+
+  and
+
+  also used to create fake first children elements without adding them in our HTML document which is commonly used to add cosmetic styles such as small tags or labels.
+
+  ```css
+  /* change font style of the first letter of heading */
+  h1::first-letter {
+    font-style: normal;
+  }
+
+  /* change color to red of every paragraphs first line */
+  p::first-line {
+    color: red;
+  }
+
+  /* Create a cosmetic style by faking an element that is automatically the first child of the element on which we use the ::after pseudo element 
+  Points to remember
+    - always need to have a content
+    - inline by nature
+  
+  */
+  h2 {
+    position: relative;
+  }
+
+  h2::after {
+    content: "TOP";
+    background-color: #ffe70e;
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    right: -25px;
+  }
+  ```
+
+- **The !important Keyword**
 
   - The !important rule is used to override all other declarations, regardless of specificity.
 
@@ -426,58 +486,204 @@ Let us get to know about how to choose elements from the document to style by us
   }
   ```
 
-### Common CSS Properties
+### **Common CSS Properties**
+
+- **Text Properties**
+
+  - will inherit automatically
+
+  ```css
+  p {
+    font-size: 10px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+  }
+  ```
+
+- **Color Properties**
+
+  - 3 common notations
+    - `rgb` - red, green and blue with values from **0** to **255** creating **16.8 million** colors
+    - `rgba` - red, green and blue with a alpha value for transperency
+    - `hexadecimal` - values ranging from **0** to **15** with last value noted as **f**
+
+  ```css
+  div {
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+  }
+  ```
+
+- **Dimension Properties**
+
+  - Can use percentage as value to cover only that percent of the parent element.
+
+  ```css
+  div {
+    width: 100%;
+    height: 500px;
+  }
+  ```
+
+- **Shorthand Properties**
+
+  - One property defining the values of multiple properties
+
+  ```css
+  div {
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+    border-left: 5px solid #000;
+    border-right: 5px solid #000;
+    border: 5px solid #000; /* border will define all*/
+
+    text-decoration-line: underline;
+    text-decoration-color: #1098ad;
+    text-decoration-style: dotted;
+    text-decoration: dashed underline #1098ad; /* text-decoration will define all */
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding: 10px; /* padding will define all */
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 10px; /* margin will define all */
+  }
+  ```
+
+### **The CSS Box Model**
+
+Every HTML element is a rectangular box, and the CSS Box Model defines how the element's size is calculated:
+
+- **Content** - The actual text or images inside the element.
+
+- **Padding** - Space between the content and the border.
+
+- **Border** - The boundary surrounding the padding.
+
+- **Margin** - Space outside the border, separating the element from others.
 
 ```css
-/* Text Properties:
-Text properties are the ones that can get inherited automatically
-*/
+div {
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+}
 
-p {
-  font-size: 10px;
+/*
+
+## How Calculation Is Done According To The CSS BOX MODEL ## 
+
+Width = left border + left padding + content width + right padding + right border   
+Height = top border + top padding + content height + bottom padding + bottom border   
+
+*/
+```
+
+### **Positioning Model in CSS**
+
+The CSS Positioning Model defines how elements are positioned in a document.
+
+- **Static Positioning** `default`
+
+  Elements are placed in the normal document flow.
+
+  ```css
+  div {
+    position: static;
+  }
+  ```
+
+- **Relative Positioning**
+
+  Moves an element relative to its normal position.
+
+  ```css
+  div {
+    position: relative;
+    top: 20px;
+    left: 10px;
+  }
+  ```
+
+- **Absolute Positioning**
+
+  Moves an element relative to its nearest positioned ancestor.
+
+  ```css
+  div {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+  ```
+
+- **Fixed Positioning**
+
+  Positions an element relative to the viewport (remains fixed even on scroll).
+
+  ```css
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  ```
+
+- **Sticky Positioning**
+
+  Behaves like relative until it reaches a defined position, then sticks.
+
+  ```css
+  div {
+    position: sticky;
+    top: 10px;
+  }
+  ```
+
+### **Inheritance in CSS**
+
+- Some properties are inherited by **default**, such as text properties (**color**, **font-family**, **visibility**).
+
+- Other properties, like **width**, **height**, **border**, and **margin**, are **not** **inherited**.
+
+- The `body` selector is often used to apply **global styles** to the document since text-related properties will be inherited by child elements.
+
+- The `universal (\*)` selector can also be used to enforce consistency across all elements and apply a **global reset** for **margin** and **padding** commonly.
+
+- You can control inheritance using:
+
+  - `inherit` (forces inheritance)
+
+  - `initial` (resets to default)
+
+  - `unset` (removes inheritance if inherited, otherwise resets to default)
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
 }
 
-/* Color Properties:
-Colors have 2 common notations in CSS that are rgb/rgba or the hexdecimal notation. In rgba, a is the alpha value used to define transperency
-*/
-
 div {
-  color: #fff;
-  background-color: rgb(0, 0, 0);
-}
-
-/* shorthand properties:
-One property can be used to define the value of multiple properties
-*/
-
-div {
-  border-top: 5px solid #000;
-  border-bottom: 5px solid #000;
-  border-left: 5px solid #000;
-  border-right: 5px solid #000;
-  border: 5px solid #000; /* border will define all*/
-
-  text-decoration-line: underline;
-  text-decoration-color: #1098ad;
-  text-decoration-style: dotted;
-  text-decoration: dashed underline #1098ad; /* text-decoration will define all */
-
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding: 10px; /* padding will define all */
-
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin: 10px; /* margin will define all */
+  color: inherit;
 }
 ```
