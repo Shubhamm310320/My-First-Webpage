@@ -697,3 +697,28 @@ div {
   color: inherit;
 }
 ```
+
+## Layouts: Floats, Flexbox, and CSS Grid Fundamentals
+
+One of the main application of CSS is to build Layouts of webpages.
+
+### **Layout**
+
+- Layout is the way text, images and other content is placed and arranged on a webpage, to make the webpage or website visually beautiful and making the content more readable, organized and attractive.
+
+- Layout gives the page a visual structure, into which we place our content.
+
+- **Building a Layout:** arranging page elements into a visual structure, instead of simply having them placed one after another (Normal Flow).
+
+#### There are two types of layouts
+
+- **Page layout:** Laying out the big pieces of content inside of a webpage or website.
+- **Component layout:** These bigger page layout are themselves made up of components which also need to be arranged in some kind of layout.
+
+### **The 3 ways of Building Layouts**
+
+#### Floats
+
+#### Flexbox
+
+#### CSS Grid

@@ -4,6 +4,9 @@
   padding: 0;
 }
 
+/* --------------------------------------------------------
+ Page Sections
+ ---------------------------------------------------------- */
 body {
   /* inheritance and global properties */
   color: #444;
@@ -24,34 +27,19 @@ body {
   margin-bottom: 60px;
 }
 
-h2 {
-  position: relative;
-}
-
-h2::after {
-  content: "TOP";
-  background-color: #ffe70e;
-  color: #444;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 5px 10px;
-  position: absolute;
-  top: -10px;
-  right: -25px;
-}
-
-.post-header {
-  margin-bottom: 40px;
-}
-
-.post-img {
-  width: 100%;
-  height: auto;
+nav {
+  /* inheritance */
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
 }
 
 article {
   margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
 }
 
 aside {
@@ -65,18 +53,9 @@ aside {
   padding: 50px 0;
 }
 
-nav {
-  /* inheritance */
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-}
-
-nav a:link {
-  padding: 10px 15px;
-  display: inline-block;
-  text-decoration: inherit;
-}
+/* --------------------------------------------------------
+ Smaller Elements Section 
+ ---------------------------------------------------------- */
 
 h1,
 h2,
@@ -92,12 +71,8 @@ h1 {
   margin-bottom: 10px;
 }
 
-h1::first-letter {
-  font-style: normal;
-  margin-right: 5px;
-}
-
 h2 {
+  position: relative;
   font-size: 40px;
   margin-bottom: 30px;
 }
@@ -131,14 +106,49 @@ li {
   margin-bottom: 10px;
 }
 
-li:last-child {
-  margin-bottom: 0;
+li:first-child {
+  font-weight: bold;
 }
 
-/* 
-footer p {
-  font-size: 16px;
-} */
+li:last-child {
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+li:nth-child(even) {
+  background-color: #ccc;
+}
+
+/* misconception: this won't work */
+article p:first-child {
+  color: red;
+}
+
+/* Styling Links */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: #444;
+  font-style: italic;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
 
 #author {
   font-style: italic;
@@ -158,17 +168,44 @@ footer p {
   list-style: none;
 }
 
-/* Styling Links */
-a:link,
-a:visited {
-  color: #1098ad;
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+
+  display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
 }
 
-a:hover,
-a:active {
-  color: red;
-  background-color: #444;
+nav a:link:last-child {
+  margin-right: 0;
 }
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* 
+footer p {
+  font-size: 16px;
+} */
 
 button {
   font-size: 22px;
@@ -176,10 +213,17 @@ button {
   cursor: pointer;
 
   position: absolute;
-  /* top: 0; */
-  right: 50px;
+  /* top: 50px;
+  left: 50px; */
   bottom: 50px;
+  right: 50px;
 }
+/*
+################################################# 
+SMALL INFORMATIONS
+#################################################
+*/
+
 /* 
 ------------------------------------------------------
 STYLING TEXT
