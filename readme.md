@@ -2,51 +2,51 @@
 
 ## Web Development Basics
 
-1. **Clients & Servers**
+### 1. Clients & Servers
 
-   - A **client** is a device (like your phone or computer) that requests information from a website.
+- A **client** is a device (like your phone or computer) that requests information from a website.
 
-   - A **server** is a powerful computer that stores website data and sends it to clients when requested.
+- A **server** is a powerful computer that stores website data and sends it to clients when requested.
 
-   > **Example:** When you type a website address (`www.google.com`) into your browser, your device **client** **requests** the page from a **server**, which then sends back the webpage as the **response**.
+  > **Example:** When you type a website address (`www.google.com`) into your browser, your device **client** **requests** the page from a **server**, which then sends back the webpage as the **response**.
 
-2. **Static vs. Dynamic Websites**
+### 2. Static vs. Dynamic Websites
 
-   - **Static Websites:** These show the same content to everyone and don’t change unless the developer manually updates them.
+- **Static Websites:** These show the same content to everyone and don’t change unless the developer manually updates them.
 
-   > **Example:** A basic personal portfolio website.
+  > **Example:** A basic personal portfolio website.
 
-   - **Dynamic Websites:** These update content based on user interaction or data from a database.
+- **Dynamic Websites:** These update content based on user interaction or data from a database.
 
-   > Example: Facebook, Amazon (where content changes based on users).
+  > Example: Facebook, Amazon (where content changes based on users).
 
-3. **Frontend vs. Backend**
+### 3. Frontend vs. Backend
 
-   - **Frontend (Client-side):** Everything users see and interact with in their browser.
+- **Frontend (Client-side):** Everything users see and interact with in their browser.
 
-   - **Backend (Server-side):** The logic, database, and server operations that make the website function.
+- **Backend (Server-side):** The logic, database, and server operations that make the website function.
 
-4. **Core Technologies**
+### 4. Core Technologies
 
-   - **Frontend Technologies:**
+#### **Frontend Technologies:**
 
-     - **HTML** – Defines the **structure** (headings, paragraphs, buttons).
-     - **CSS** – **Styles** the website (colors, fonts, layout).
-     - **JavaScript** – Adds **interactivity** (buttons, animations, pop-ups).
+- **HTML** – Defines the **structure** (headings, paragraphs, buttons).
+- **CSS** – **Styles** the website (colors, fonts, layout).
+- **JavaScript** – Adds **interactivity** (buttons, animations, pop-ups).
 
-   - **Backend Technologies:**
+#### **Backend Technologies:**
 
-     - `Python`, `JavaScript` (`Node.js`), `PHP`, `Java`, `Ruby`, etc.
+- `Python`, `JavaScript` (`Node.js`), `PHP`, `Java`, `Ruby`, etc.
 
-     - `MySQL`, `PostgreSQL`, `MongoDB` (store and manage data).
+- `MySQL`, `PostgreSQL`, `MongoDB` (store and manage data).
 
-     - `Apache`, `Nginx`, cloud platforms like `AWS`.
+- `Apache`, `Nginx`, cloud platforms like `AWS`.
 
 ---
 
 ## Fundamentals of HTML
 
-### HTML
+### 1. HTML?
 
 - HTML (**HyperText Markup Language**) is the standard language for creating web pages.
 
@@ -56,7 +56,7 @@
 
 - HTML files have a `.html` extension and can be viewed in any web browser.
 
-### HTML Document Structure
+### 2. HTML Document Structure
 
 Basic structure of a HTML document:
 
@@ -83,7 +83,7 @@ Basic structure of a HTML document:
 
 `<body>`: Contains all the visible content of the page.
 
-### HTML Elements & Tags
+### 3. HTML Elements & Tags
 
 HTML consists of **elements** enclosed in **tags**:
 
@@ -95,7 +95,7 @@ Types of Tags are
 
 - **Self-closing Tags (Void Elements):** These tags do not require a closing tag. Example: `<br />`, `<img />`, `<input />`
 
-### Common HTML elements and attributes
+### 4. Common HTML elements and attributes
 
 ```html
 <!-- Headings -->
@@ -195,6 +195,8 @@ Types of Tags are
 </footer>
 ```
 
+### 5. Semantic HTML
+
 Semantic HTML was introduced after HTML5, before which everything was contained in `<div>`**Everything**`</div>` to make up the layout of webpages. Developers used multiple `<div>` elements with classes and IDs to style and organize content, making the code harder to read and maintain. With the introduction of semantic elements, web pages became more structured, improving accessibility, readability, and SEO ranking.
 
 This change makes the code more meaningful and improves its interpretation by browsers, search engines, and assistive technologies.
@@ -209,7 +211,7 @@ This change makes the code more meaningful and improves its interpretation by br
 
 - CSS consists of countless **properties** that developers use to format the content: properties about font, text, spacing, layout etc.
 
-### **CSS Syntax**
+### 1. CSS Syntax
 
 ```css
 selector {
@@ -234,331 +236,337 @@ p {
 }
 ```
 
-### **The 3 ways to apply CSS**
+### 2. The 3 ways to apply CSS
 
-1. **Inline CSS** - applies styles directly within an HTML element
+#### **Inline CSS**
+
+Applies styles directly within an HTML element
 
 ```html
 <p style="color: blue; font-size: 20px;">This is a blue paragraph.</p>
 ```
 
-2. **Internal CSS** - defined within a `<style>` tag inside the `<head>` section of the HTML document
+#### **Internal CSS**
 
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <style>
-         p {
-           color: green;
-           font-size: 18px;
-         }
-       </style>
-     </head>
-     <body>
-       <p>This is a green paragraph.</p>
-     </body>
-   </html>
-   ```
+defined within a `<style>` tag inside the `<head>` section of the HTML document
 
-3. **External CSS** - written in an external `.css` file which is linked using the `<link>` tag in the `<head>` section of the HTML document.
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        color: green;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This is a green paragraph.</p>
+  </body>
+</html>
+```
 
-   ```html
-   <!-- Linking the external file -->
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <link rel="stylesheet" href="styles.css" />
-     </head>
-     <body>
-       <p>This paragraph is styled with an external CSS file.</p>
-     </body>
-   </html>
-   ```
+#### **External CSS**
 
-   ```css
-   /* External CSS file  */
-   p {
-     color: red;
-     font-size: 16px;
-     font-weight: bold;
-   }
-   ```
+Written in an external `.css` file which is linked using the `<link>` tag in the `<head>` section of the HTML document.
 
-### **CSS Selectors**
+```html
+<!-- Linking the external file -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <p>This paragraph is styled with an external CSS file.</p>
+  </body>
+</html>
+```
+
+```css
+/* External CSS file  */
+p {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
+```
+
+### 3. CSS Selectors
 
 Let us get to know about how to choose elements from the document to style by using various types of CSS selectors, in an incrementing order of their specificities/priority.
 
-- **Universal Selector (\*)**
+#### **Universal Selector (\*)**
 
-  Selects all elements in the document and inherits all properties, even those which do not get inherited, to every element of the document.
+Selects all elements in the document and inherits all properties, even those which do not get inherited, to every element of the document.
 
-  Least specificity.
+Least specificity.
 
-  ```css
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  ```
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
 
-- **Type/Element Selector**
+#### **Type/Element Selector**
 
-  Selects all elements of a specific type (tag name).
+Selects all elements of a specific type (tag name).
 
-  ```css
-  h1 {
-    color: blue;
-  }
-  ```
+```css
+h1 {
+  color: blue;
+}
+```
 
-- **Class Selector (.)**
+#### **Class Selector (.)**
 
-  Selects elements with a specific class name.
+Selects elements with a specific class name.
 
-  Classes can be applied to multiple elements and are commonly used in real-world applications for reusable styles.
+Classes can be applied to multiple elements and are commonly used in real-world applications for reusable styles.
 
-  ```css
-  .intro {
-    font-size: 20px;
-    color: green;
-  }
-  ```
+```css
+.intro {
+  font-size: 20px;
+  color: green;
+}
+```
 
-  _Usage in HTML:_
+_Usage in HTML:_
 
-  ```html
-  <p class="intro">This is an introduction paragraph.</p>
-  ```
+```html
+<p class="intro">This is an introduction paragraph.</p>
+```
 
-- **ID Selector (#)**
+#### **ID Selector (#)**
 
-  Selects a unique element by its ID.
+Selects a unique element by its ID.
 
-  IDs should be unique within a document and are more specific than class selectors.
+IDs should be unique within a document and are more specific than class selectors.
 
-  ```css
-  #main-title {
-    font-size: 30px;
-    font-weight: bold;
-  }
-  ```
+```css
+#main-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+```
 
-  _Usage in HTML:_
+_Usage in HTML:_
 
-  ```html
-  <h1 id="main-title">Welcome to CSS</h1>
-  ```
+```html
+<h1 id="main-title">Welcome to CSS</h1>
+```
 
-- **Descendant Selector**
+#### **Descendant Selector**
 
-  Selects elements that are inside a specific parent element.
+Selects elements that are inside a specific parent element.
 
-  ```css
-  div p {
-    color: purple;
-  }
-  ```
+```css
+div p {
+  color: purple;
+}
+```
 
-  _Usage in HTML:_
+_Usage in HTML:_
 
-  ```html
-  <div>
-    <p>This paragraph inside a div will be purple.</p>
-  </div>
-  ```
+```html
+<div>
+  <p>This paragraph inside a div will be purple.</p>
+</div>
+```
 
-- **Adjacent Selector**
+#### **Adjacent Selector**
 
-  This selects the adjacent sibling elements and is denoted by a `+` sign.
+This selects the adjacent sibling elements and is denoted by a `+` sign.
 
-  siblings are the elements present inside of a same parent element.
+siblings are the elements present inside of a same parent element.
 
-  ```css
-  /* Select all paragraphs which come just after an h2 element */
-  h2 + p {
-    color: red;
-  }
+```css
+/* Select all paragraphs which come just after an h2 element */
+h2 + p {
+  color: red;
+}
 
-  h2 + p::first-letter {
-    font-size: 40px;
-  }
-  ```
+h2 + p::first-letter {
+  font-size: 40px;
+}
+```
 
-- **Pseudo-classes**
+#### **Pseudo-classes**
 
-  Pseudo-classes define a special state of an element.
+Pseudo-classes define a special state of an element.
 
-  ```css
-  /* Style first child of a parent element*/
-  p:first-child {
-    font-weight: bold;
-  }
-
-  /* Style last child of a parent element*/
-  p:last-child {
-    font-style: italic;
-  }
-
-  /* Style nth child of a parent element*/
-  li:nth-child(2) {
-    color: orange;
-  }
-
-  /*---------------------------------------------------------------
-    Pseudo classes are most commonly used to style hyperlinks in the same order as given below and it is good practice to keep the link & visited together and the hover and active together. But we can use them anyhow we like. 
-   ---------------------------------------------------------------*/
-
-  /* Style unvisited links */
-  a:link {
-    color: blue;
-  }
-
-  /* Change color when hovered */
-  a:hover {
-    color: red;
-  }
-
-  /* Style visited links */
-  a:visited {
-    color: purple;
-  }
-
-  /* Style when an element is active */
-  button:active {
-    background-color: yellow;
-  }
-  ```
-
-- **Pseudo Elements**
-
-  Pseudo elements can select elements that are not actual HTML elements such as first-letter or first-line of a paragraph or text
-
-  and
-
-  also used to create fake first children elements without adding them in our HTML document which is commonly used to add cosmetic styles such as small tags or labels.
-
-  ```css
-  /* change font style of the first letter of heading */
-  h1::first-letter {
-    font-style: normal;
-  }
-
-  /* change color to red of every paragraphs first line */
-  p::first-line {
-    color: red;
-  }
-
-  /* Create a cosmetic style by faking an element that is automatically the first child of the element on which we use the ::after pseudo element 
-  Points to remember
-    - always need to have a content
-    - inline by nature
-  
-  */
-  h2 {
-    position: relative;
-  }
-
-  h2::after {
-    content: "TOP";
-    background-color: #ffe70e;
-    color: #444;
-    font-size: 16px;
-    font-weight: bold;
-    display: inline-block;
-    padding: 5px 10px;
-    position: absolute;
-    top: -10px;
-    right: -25px;
-  }
-  ```
-
-- **The !important Keyword**
-
-  - The !important rule is used to override all other declarations, regardless of specificity.
-
-  - It should be used sparingly as it can make debugging styles difficult.
-
-  ```css
-  /* Important keyword in CSS has the highest priority */
-  p {
-    font-size: 18px !important;
-  }
-  ```
-
-### **Common CSS Properties**
-
-- **Text Properties**
-
-  - will inherit automatically
-
-  ```css
-  p {
-    font-size: 10px;
-    font-family: sans-serif;
-    font-style: italic;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.5;
-  }
-  ```
-
-- **Color Properties**
-
-  - 3 common notations
-    - `rgb` - red, green and blue with values from **0** to **255** creating **16.8 million** colors
-    - `rgba` - red, green and blue with a alpha value for transperency
-    - `hexadecimal` - values ranging from **0** to **15** with last value noted as **f**
-
-  ```css
-  div {
-    color: #fff;
-    background-color: rgb(0, 0, 0);
-  }
-  ```
-
-- **Dimension Properties**
-
-  - Can use percentage as value to cover only that percent of the parent element.
-
-  ```css
-  div {
-    width: 100%;
-    height: 500px;
-  }
-  ```
-
-- **Shorthand Properties**
-
-  - One property defining the values of multiple properties
-
-  ```css
-  div {
-    border-top: 5px solid #000;
-    border-bottom: 5px solid #000;
-    border-left: 5px solid #000;
-    border-right: 5px solid #000;
-    border: 5px solid #000; /* border will define all*/
-
-    text-decoration-line: underline;
-    text-decoration-color: #1098ad;
-    text-decoration-style: dotted;
-    text-decoration: dashed underline #1098ad; /* text-decoration will define all */
-
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding: 10px; /* padding will define all */
-
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin: 10px; /* margin will define all */
-  }
-  ```
+```css
+/* Style first child of a parent element*/
+p:first-child {
+  font-weight: bold;
+}
+
+/* Style last child of a parent element*/
+p:last-child {
+  font-style: italic;
+}
+
+/* Style nth child of a parent element*/
+li:nth-child(2) {
+  color: orange;
+}
+
+/*---------------------------------------------------------------
+  Pseudo classes are most commonly used to style hyperlinks in the same order as given below and it is good practice to keep the link & visited together and the hover and active together. But we can use them anyhow we like. 
+ ---------------------------------------------------------------*/
+
+/* Style unvisited links */
+a:link {
+  color: blue;
+}
+
+/* Change color when hovered */
+a:hover {
+  color: red;
+}
+
+/* Style visited links */
+a:visited {
+  color: purple;
+}
+
+/* Style when an element is active */
+button:active {
+  background-color: yellow;
+}
+```
+
+#### **Pseudo Elements**
+
+Pseudo elements can select elements that are not actual HTML elements such as first-letter or first-line of a paragraph or text
+
+and
+
+also used to create fake first children elements without adding them in our HTML document which is commonly used to add cosmetic styles such as small tags or labels.
+
+```css
+/* change font style of the first letter of heading */
+h1::first-letter {
+  font-style: normal;
+}
+
+/* change color to red of every paragraphs first line */
+p::first-line {
+  color: red;
+}
+
+/* Create a cosmetic style by faking an element that is automatically the first child of the element on which we use the ::after pseudo element 
+Points to remember
+  - always need to have a content
+  - inline by nature
+
+*/
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+```
+
+#### **The !important Keyword**
+
+- The !important rule is used to override all other declarations, regardless of specificity.
+
+- It should be used sparingly as it can make debugging styles difficult.
+
+```css
+/* Important keyword in CSS has the highest priority */
+p {
+  font-size: 18px !important;
+}
+```
+
+### 4. Common CSS Properties
+
+#### **Text Properties**
+
+- will inherit automatically
+
+```css
+p {
+  font-size: 10px;
+  font-family: sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+}
+```
+
+#### **Color Properties**
+
+- 3 common notations
+  - `rgb` - red, green and blue with values from **0** to **255** creating **16.8 million** colors
+  - `rgba` - red, green and blue with a alpha value for transperency
+  - `hexadecimal` - values ranging from **0** to **15** with last value noted as **f**
+
+```css
+div {
+  color: #fff;
+  background-color: rgb(0, 0, 0);
+}
+```
+
+#### **Dimension Properties**
+
+- Can use percentage as value to cover only that percent of the parent element.
+
+```css
+div {
+  width: 100%;
+  height: 500px;
+}
+```
+
+#### **Shorthand Properties**
+
+- One property defining the values of multiple properties
+
+```css
+div {
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-left: 5px solid #000;
+  border-right: 5px solid #000;
+  border: 5px solid #000; /* border will define all*/
+
+  text-decoration-line: underline;
+  text-decoration-color: #1098ad;
+  text-decoration-style: dotted;
+  text-decoration: dashed underline #1098ad; /* text-decoration will define all */
+
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 10px; /* padding will define all */
+
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: 10px; /* margin will define all */
+}
+```
 
 ### **The CSS Box Model**
 
@@ -595,63 +603,63 @@ Height = top border + top padding + content height + bottom padding + bottom bor
 
 The CSS Positioning Model defines how elements are positioned in a document.
 
-- **Static Positioning** `default`
+#### **Static Positioning** `default`
 
-  Elements are placed in the normal document flow.
+Elements are placed in the normal document flow.
 
-  ```css
-  div {
-    position: static;
-  }
-  ```
+```css
+div {
+  position: static;
+}
+```
 
-- **Relative Positioning**
+#### **Relative Positioning**
 
-  Moves an element relative to its normal position.
+Moves an element relative to its normal position.
 
-  ```css
-  div {
-    position: relative;
-    top: 20px;
-    left: 10px;
-  }
-  ```
+```css
+div {
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+```
 
-- **Absolute Positioning**
+#### **Absolute Positioning**
 
-  Moves an element relative to its nearest positioned ancestor.
+Moves an element relative to its nearest positioned ancestor.
 
-  ```css
-  div {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-  }
-  ```
+```css
+div {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+```
 
-- **Fixed Positioning**
+#### **Fixed Positioning**
 
-  Positions an element relative to the viewport (remains fixed even on scroll).
+Positions an element relative to the viewport (remains fixed even on scroll).
 
-  ```css
-  div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  ```
+```css
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+```
 
-- **Sticky Positioning**
+#### **Sticky Positioning**
 
-  Behaves like relative until it reaches a defined position, then sticks.
+Behaves like relative until it reaches a defined position, then sticks.
 
-  ```css
-  div {
-    position: sticky;
-    top: 10px;
-  }
-  ```
+```css
+div {
+  position: sticky;
+  top: 10px;
+}
+```
 
 ### **Inheritance in CSS**
 
@@ -672,11 +680,13 @@ The CSS Positioning Model defines how elements are positioned in a document.
   - `unset` (removes inheritance if inherited, otherwise resets to default)
 
 ```css
+/* global reset */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* inheritance to text properties to make our code future ready for changes */
 body {
   font-family: sans-serif;
   font-weight: 300;
