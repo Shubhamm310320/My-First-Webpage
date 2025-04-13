@@ -669,7 +669,7 @@ div {
 
 - The `body` selector is often used to apply **global styles** to the document since text-related properties will be inherited by child elements.
 
-- The `universal (\*)` selector can also be used to enforce consistency across all elements and apply a **global reset** for **margin** and **padding** commonly.
+- The `universal (\*)` selector can also be used to enforce consistency across all elements and apply a **global reset** used for **margin** and **padding** commonly, also used for **box-sizing** for better control of the box-model measurements.
 
 - You can control inheritance using:
 
@@ -684,6 +684,7 @@ div {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* --> see the floats section for detail */
 }
 
 /* inheritance to text properties to make our code future ready for changes */
@@ -710,14 +711,87 @@ One of the main application of CSS is to build Layouts of webpages.
 
 - **Building a Layout:** arranging page elements into a visual structure, instead of simply having them placed one after another (Normal Flow).
 
-#### There are two types of layouts
+The two types of layouts are
 
-- **Page layout:** Laying out the big pieces of content inside of a webpage or website.
-- **Component layout:** These bigger page layout are themselves made up of components which also need to be arranged in some kind of layout.
+#### **Page layout**
+
+Laying out the big pieces of content inside of a webpage or website.
+
+#### **Component layout**
+
+These bigger page layout are themselves made up of components which also need to be arranged in some kind of layout.
 
 ### **The 3 ways of Building Layouts**
 
-#### Floats
+#### **Floats**
+
+##### **The float property**
+
+Flex property is the old way of creating layouts and is getting outdated very fast.
+
+Even though **Float property** is not a _positioning scheme_, it is used to take elements out of the flow similar to absolute positioning. The common difference is that -
+
+- Absolute positioning removes the element from the document flow and has no effect on surrounding elements.
+
+- Floated elements are also removed from flow, but can still affect surrounding content (like text wrapping around an image), though they are not affected by surrounding content.
+
+##### **Using float property**
+
+Before using floats we need to make sure that the widths of our elements are properly set to fit the actual layout that we are going for. This will make sure that the elements do not overflow or jump out of the container element as this will destroy the layout and the visual appearance too.
+
+A very common practice to make this task a little easier is to add a global reset of the box-model so that it does not behave in a weird way due to its natural order of calculation of widths and heights.
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+To float an element we just set the float property to either of one value - **left** or **right**.
+
+`Example -`
+
+```css
+img {
+  float: left;
+}
+
+p {
+  float: right;
+}
+```
+
+##### **Clearing floats**
+
+If we float all child elements of a parent element this will collapse the height of the parent element as there will practically be no element inside of that parent element so to fix this problem of **callapsing elements** we usually **clear floats**.
+
+1. In the empty parent element add a empty div with a clear class **.clear** with clear property at a value of both to clear both floats left and right in any case.
+
+   ```css
+   .clear {
+     clear: both;
+   }
+   ```
+
+   But, this method was very impractical as if there were multiple elements with collapsed height adding so many divs unnescessarily would be a very bad idea producing a cluttered code base.
+
+2. The **clearfix hack** method was a fix to the previous method of an empty div and was used widely for many years.
+
+   - Add a clearfix class on the collapsing element
+   - The clearfix class will contain a after or before pseuodo element
+     - content will be empty
+     - clear both floats
+     - element must be a block level element
+
+   ```css
+   .cleearfix::after {
+     content: "";
+     clear: both;
+     display: block;
+     /* By default pseudo elements are inline elements */
+     /* Clearing floats really works on only a block level element */
+   }
+   ```
 
 #### Flexbox
 
