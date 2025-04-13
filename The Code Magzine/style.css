@@ -383,3 +383,37 @@ The most useful are ::after and ::before used to create a pseudo element that wi
 LAYOUTS: Flexbox
 #################################################
 */
+.container {
+  width: 1200px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.author-box p {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+article {
+  flex-basis: 825px;
+}
+
+aside {
+  flex-basis: 300px;
+  align-self: start;
+}
