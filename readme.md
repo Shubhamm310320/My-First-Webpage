@@ -793,6 +793,35 @@ If we float all child elements of a parent element this will collapse the height
    }
    ```
 
-#### Flexbox
+#### **Flexbox**
+
+- Flexbox is a **set of related CSS Properties** for building **1 Dimension layouts**.
+
+- The main idea behind flexbox is that **empty space** inside a container element can be **divided by its child elements**.
+
+- flexbox also makes it easy to automatically align items to one another inside a parent container, both horizontally and vertically.
+
+- Flexbox solves common problems such as vertical centering and creating equal-height columns.
+
+To start with flexbox we just need to set the **display property to flex** on a container element which contains some child elements in it.
+Imediately all the child elements are side by side without using floats and these elements are called **flex-items** as they are the **child elements of the flex container**.
+
+1. **Horizontally** each flex item occupies exactly the space necessary for its content.
+
+2. **Vertically** things are different. Vertically by default all the flex items are as tall as the tallest item or say they are stretched.
+
+##### **Terminologies:**
+
+- **Flex-container :** element on which we want to use flexbox is called a flex-container.
+- **Flex-items :** all the direct children of a flex-container are flex-items.
+- **Main-axis :** the direction in which the flex-items are laid out is the main-axis.
+- **Cross-axis :** The other perpendicular direction is the cross-axis.
+  - Axis are important as we can change their direction and align elements along the axis, so we need to know which axis we are dealing with.
+
+##### **Cheatsheet**
+
+![Flexbox Properties Cheatsheet](./The%20Code%20Magzine/imgs/flexbox-cheatsheet.png)
+
+`99%` of most common problems can be solved using these properties.
 
 #### CSS Grid
