@@ -568,7 +568,7 @@ div {
 }
 ```
 
-### **The CSS Box Model**
+### 5. The CSS Box Model
 
 Every HTML element is a rectangular box, and the CSS Box Model defines how the element's size is calculated:
 
@@ -599,7 +599,7 @@ Height = top border + top padding + content height + bottom padding + bottom bor
 */
 ```
 
-### **Positioning Model in CSS**
+### 6. Positioning Models in CSS
 
 The CSS Positioning Model defines how elements are positioned in a document.
 
@@ -661,7 +661,7 @@ div {
 }
 ```
 
-### **Inheritance in CSS**
+### 7. Inheritance in CSS
 
 - Some properties are inherited by **default**, such as text properties (**color**, **font-family**, **visibility**).
 
@@ -703,7 +703,7 @@ div {
 
 One of the main application of CSS is to build Layouts of webpages.
 
-### **Layout**
+### 1. Layout
 
 - Layout is the way text, images and other content is placed and arranged on a webpage, to make the webpage or website visually beautiful and making the content more readable, organized and attractive.
 
@@ -721,15 +721,13 @@ Laying out the big pieces of content inside of a webpage or website.
 
 These bigger page layout are themselves made up of components which also need to be arranged in some kind of layout.
 
-### **The 3 ways of Building Layouts**
+### 2. The 3 ways of Building Layouts
 
 #### **Floats**
 
 ##### **The float property**
 
-Flex property is the old way of creating layouts and is getting outdated very fast.
-
-Even though **Float property** is not a _positioning scheme_, it is used to take elements out of the flow similar to absolute positioning. The common difference is that -
+The **float property** is the **old way of creating layouts** and is getting outdated very fast. Even though **float property** is **not a positioning scheme**, it is used to **take elements out of the flow** similar to absolute positioning. The common difference between both is that -
 
 - Absolute positioning removes the element from the document flow and has no effect on surrounding elements.
 
@@ -737,61 +735,67 @@ Even though **Float property** is not a _positioning scheme_, it is used to take
 
 ##### **Using float property**
 
-Before using floats we need to make sure that the widths of our elements are properly set to fit the actual layout that we are going for. This will make sure that the elements do not overflow or jump out of the container element as this will destroy the layout and the visual appearance too.
+Before using floats we need to make sure that
 
-A very common practice to make this task a little easier is to add a global reset of the box-model so that it does not behave in a weird way due to its natural order of calculation of widths and heights.
+- the **widths** of our elements are properly set to **fit the actual layout** that **we are going for**. This will make sure that the **elements do not overflow** or jump out of the container element.
+
+> A very common practice to make this task a little easier is to add a global reset of the box-model so that it does not behave in a weird way due to its natural order of calculation of widths and heights.
+>
+> ```css
+> /* A Global Reset used to control the weird default behaviour of the box model in CSS */
+> * {
+>   box-sizing: border-box;
+> }
+> ```
+
+To float an element we just set the **float property** to either of one value - **left** or **right**.
+
+`Example :-`
 
 ```css
-* {
-  box-sizing: border-box;
-}
-```
-
-To float an element we just set the float property to either of one value - **left** or **right**.
-
-`Example -`
-
-```css
-img {
+.child-el--1 {
   float: left;
 }
-
-p {
+.child-el--2 {
   float: right;
 }
 ```
 
 ##### **Clearing floats**
 
-If we float all child elements of a parent element this will collapse the height of the parent element as there will practically be no element inside of that parent element so to fix this problem of **callapsing elements** we usually **clear floats**.
+**Collapsing elements :** If we float all child elements of a parent element this will collapse the height of the parent element as there will practically be no element inside of the parent element so to fix this problem of **callapsing elements** we usually **clear floats**.
 
-1. In the empty parent element add a empty div with a clear class **.clear** with clear property at a value of both to clear both floats left and right in any case.
+- **clear floats**
 
-   ```css
-   .clear {
-     clear: both;
-   }
-   ```
+  In the empty parent element add a empty div with a clear class **.clear** with clear property at a value of both to clear both floats left and right in any case.
 
-   But, this method was very impractical as if there were multiple elements with collapsed height adding so many divs unnescessarily would be a very bad idea producing a cluttered code base.
+  ```css
+  .clear {
+    clear: both;
+  }
+  ```
 
-2. The **clearfix hack** method was a fix to the previous method of an empty div and was used widely for many years.
+But, this method was very impractical as if there were multiple elements with collapsed height adding so many divs unnescessarily would be a very bad idea producing a cluttered code base.
 
-   - Add a clearfix class on the collapsing element
-   - The clearfix class will contain a after or before pseuodo element
-     - content will be empty
-     - clear both floats
-     - element must be a block level element
+- **clearfic hack**
 
-   ```css
-   .cleearfix::after {
-     content: "";
-     clear: both;
-     display: block;
-     /* By default pseudo elements are inline elements */
-     /* Clearing floats really works on only a block level element */
-   }
-   ```
+  The **clearfix hack** method was a fix to the previous method of an empty div and was used widely for many years.
+
+  - Add a clearfix class on the collapsing element
+  - The clearfix class will contain a after or before pseuodo element
+    - content will be empty
+    - clear both floats
+    - element must be a block level element
+
+  ```css
+  .cleearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+    /* By default pseudo elements are inline elements */
+    /* Clearing floats really works on only a block level element */
+  }
+  ```
 
 #### **Flexbox**
 
@@ -799,29 +803,207 @@ If we float all child elements of a parent element this will collapse the height
 
 - The main idea behind flexbox is that **empty space** inside a container element can be **divided by its child elements**.
 
-- flexbox also makes it easy to automatically align items to one another inside a parent container, both horizontally and vertically.
+- flexbox also makes it easy to **automatically align items** to one another inside a parent container, **both horizontally and vertically**.
 
-- Flexbox solves common problems such as vertical centering and creating equal-height columns.
+- Flexbox **solves common problems** such as **vertical centering** and **creating equal-height columns**.
 
 To start with flexbox we just need to set the **display property to flex** on a container element which contains some child elements in it.
 Imediately all the child elements are side by side without using floats and these elements are called **flex-items** as they are the **child elements of the flex container**.
 
-1. **Horizontally** each flex item occupies exactly the space necessary for its content.
+```css
+.container {
+  display: flex;
+}
+```
 
-2. **Vertically** things are different. Vertically by default all the flex items are as tall as the tallest item or say they are stretched.
+- **Horizontally** each flex item **occupies exactly the space necessary** for its content.
+
+- **Vertically** things are different. **Vertically by default** all the **flex items** are as tall as the tallest item or say they are **stretched**.
 
 ##### **Terminologies:**
 
-- **Flex-container :** element on which we want to use flexbox is called a flex-container.
-- **Flex-items :** all the direct children of a flex-container are flex-items.
-- **Main-axis :** the direction in which the flex-items are laid out is the main-axis.
-- **Cross-axis :** The other perpendicular direction is the cross-axis.
+- **`Flex-container :`** element on which we want to use flexbox is called a flex-container.
+- **`Flex-items :`** all the direct children of a flex-container are flex-items.
+- **`Main-axis :`** the direction in which the flex-items are laid out is the main-axis.
+- **`Cross-axis :`** The other perpendicular direction is the cross-axis.
   - Axis are important as we can change their direction and align elements along the axis, so we need to know which axis we are dealing with.
 
-##### **Cheatsheet**
+##### **Cheatsheet for flexbox properties**
 
 ![Flexbox Properties Cheatsheet](./The%20Code%20Magzine/imgs/flexbox-cheatsheet.png)
 
 `99%` of most common problems can be solved using these properties.
 
-#### CSS Grid
+#### **CSS Grid**
+
+**CSS grid** is the most modern way of building **2-dimensional layouts**, and also the most complete one. It is also the **easiest way** to build layouts atleast if we only use the fundamentals.
+
+- CSS Grid is a **set of CSS properties** that web developers can use **to build 2-dimensional layouts**.
+
+- The main idea behind it was that now we could **divide a container element into rows and columns** that we could **then fill with it's child elements**. And a lot of stuff is possible here.
+
+  - **Span** elements across multiple rows and columns.
+  - **Overlap** different elements.
+
+- Css grid is used in 2-dimensional contexts allowing us to write a lot **less nested HTML and easier to read CSS**.
+
+- CSS grid completely **revolutionized CSS**.
+
+- **CSS grid** is not to replace **flexbox** instead they both work together perfectly and are meant to go **hand-in-hand**.
+
+##### **Use of CSS Grid**
+
+- To get started with a **simple grid** we need to set the **display** property to **grid** on the container element. The child elements of this **grid-container** are called the **grid-items**.
+
+  ```css
+  .container {
+    display: grid;
+  }
+  ```
+
+- Now we can create/define the **columns** and **rows** using the properties **grid-template-column** and **grid-template-row** respectively. As soon as we create some columns the grid-items will be displayed in columns and rows, and So, as many rows will be created automatically as necessary. These automatically created rows are called the **implicit rows** whereas if we define them ourselves they are called as **explicit rows**.
+
+  ```css
+  .container {
+    grid-template-column: 150px 150px;
+    grid-template-row: 50px 50px;
+  }
+  ```
+
+##### **Terminologies**
+
+- **`Grid-container :`** This is where everything happens and we create a grid container by setting it's display property to grid.
+
+- **`Grid-items :`** All the child elements of the grid container are called grid-items.
+
+- **`Row-axis :`** horizontal
+
+- **`Column-axis :`** vertical
+
+  Unlike flexbox we cannot change the direction of these axis and this makes it more easier to work with CSS grid.
+
+- **`Grid-lines :`** Divide up the grid and seperate the columns and rows. these grid lines are numbered from 1 to the number of columns/rows + 1. These are used to place a grid-item in a specific place in the grid according to the column and rows.
+
+- **`Grid-cells :`** All the areas created by the intersection of both the grid lines for the columns and the rows are grid cells. grid cells are always created but they do not always need to be filled.
+
+- **`Gutters/Gaps :`** So the spaces between grid items we create are the gutters or gaps.
+
+- **`Grid-tracks :`** So a grid column or a row is also called a grid-track.And we call these tracks because these concepts are a bit more about the space itself and not about the grid items.
+
+##### **Sizing**
+
+- There are **various units** that are available to use while defining the **columns/rows**.
+
+  - `px`
+  - `fr`
+  - `%`
+  - `auto`
+
+- There is also the **repeat function** which makes creating multiple columns rows more easy if they are of the same unit value.
+
+  ```css
+  /* px (pixels unit value) */
+  .container {
+    grid-template-column: 150px 250px;
+    grid-template-row: 100px 150px;
+  }
+
+  /* fr (fractional unit value) */
+  .container {
+    grid-template-column: 1fr 1fr 1fr 1fr;
+    grid-template-row: 2fr 1fr;
+  }
+
+  /* % (percentage unit value) */
+  .container {
+    grid-template-column: 25% 25% 20% 20% 10%;
+    grid-template-row: 60% 40%;
+  }
+
+  /* auto (auto unit value) */
+  .container {
+    grid-template-column: auto 1fr 1fr auto;
+    grid-template-row: 2fr auto 1fr;
+  }
+
+  /* repeat function */
+  .container {
+    grid-template-column: repeat(4, 1fr);
+  }
+  ```
+
+- We can also define the **gap** property similar to flexbox which is the **only way to define space between grid items**. Earlier it was called **grid-gap** but they removed the grid prefix after gap property was also added to flexbox.
+
+  ```css
+  .container {
+    gap: 20px;
+  }
+  ```
+
+- The column and row gaps can be defined seperately too.
+
+  ```css
+  .container {
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+  ```
+
+- grid items are stretched by default.
+
+##### **Placing and Spanning**
+
+- The **grid-lines** are used to **place grid-items** in specific places in the grid by defining the properties **grid-column** and **grid-row** as shown below.
+
+  ```css
+  .child-el-1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  ```
+
+- grid-items can also span multiple grid-cells by either using **grid-line numbers** or **span keyword**.
+
+  ```css
+  .child-el-2 {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+  }
+  ```
+
+- There is also a trick of using the **negative number** to span till the end of the grid which works due to the grid lines defined by both positive and negative values in opposite directions.
+
+  ```css
+  .child-el-2 {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+  }
+  ```
+
+> There are **dev-tools** in the browser itself that highlight the **grid lines** marked with their respective numbers starting from **1** to **number of columns + 1**.
+
+##### **Aligning Grid-items and Tracks**
+
+Aligning grid-items is a little different in css grid than in flexbox, because **we can align both the tracks inside the container** and **the grid-items inside the tracks**.
+
+- **Aligning tracks inside grid-container** is done by **align-content** and **justify-content** for vertical and horizontal alignment respectively.
+
+  ```css
+  .container {
+    align-content: center;
+    justify-content: center;
+  }
+  ```
+
+- **Aligning items inside the tracks or cells** can be done using the **align-items** and **justify-items** for vertical and horizontal alignment respectively.
+
+  ```css
+  .container {
+    align-items: center;
+    justify-items: center;
+  }
+  ```
+
+##### **Cheatsheet for CSS grid properties**
+
+![Flexbox Properties Cheatsheet](./The%20Code%20Magzine/imgs/grid-cheatsheet.png)
