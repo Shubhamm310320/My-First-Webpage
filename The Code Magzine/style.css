@@ -43,7 +43,6 @@ article {
 }
 
 aside {
-  width: 500px;
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
@@ -377,3 +376,22 @@ Adjacent sibling selector(+) - h3 + p means only the paras after an h3 that mean
 
 The most useful are ::after and ::before used to create a pseudo element that will automatically be the very first child of the selected element and for small cosmetic styles.
 */
+
+/*
+################################################# 
+LAYOUTS: CSS Grid
+#################################################
+*/
+.container {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 825px 300px;
+  gap: 80px;
+  align-items: start;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/-1;
+}
